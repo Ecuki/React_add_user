@@ -5,7 +5,7 @@ const ButtonFetchUsers = props => {
   return (
     <>
       <button className={props.class} onClick={props.click}>
-        {` Losuj  ${props.value > 1 ? `${props.value}` : "użytkownika"}`}
+        {`${props.value > 1 ? `Losuj ${props.value}` : "Dodaj użytkownika"}`}
       </button>
     </>
   );
