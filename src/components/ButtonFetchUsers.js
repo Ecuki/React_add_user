@@ -1,9 +1,12 @@
 import React from "react";
+import "./ButtonFetchUser.css";
 
 const ButtonFetchUsers = props => {
   return (
     <>
-      <button onClick={props.click}>Dodaj użytkowników</button>
+      <button className={props.class} onClick={props.click}>
+        {` Losuj  ${props.value > 1 ? `${props.value}` : "użytkownika"}`}
+      </button>
     </>
   );
 };

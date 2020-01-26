@@ -3,13 +3,13 @@ import UsersList from "./UsersList.js";
 import ButtonFetchUsers from "./ButtonFetchUsers.js";
 import "./App.css";
 
-const API = "https://randomuser.me/api/?results=5";
-
+const API5 = "https://randomuser.me/api/?results=5";
+const API1 = "https://randomuser.me/api/?results=1";
 class App extends React.Component {
   state = {
     users: null
   };
-  handleDataFetch = () => {
+  handleDataFetch = API => {
     // console.log("click");
     fetch(API)
       .then(response => {
@@ -33,7 +33,16 @@ class App extends React.Component {
     console.log(users);
     return (
       <div>
-        <ButtonFetchUsers click={this.handleDataFetch} />
+        <ButtonFetchUsers
+          value={1}
+          class={"addUser"}
+          click={this.handleDataFetch.bind(this, API1)}
+        />
+        <ButtonFetchUsers
+          value={5}
+          class={"addUsers"}
+          click={this.handleDataFetch.bind(this, API5)}
+        />
         {users !== {} && users !== null ? <UsersList users={users} /> : ""}
       </div>
     );
