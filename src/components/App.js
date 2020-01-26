@@ -51,7 +51,7 @@ class App extends React.Component {
           class={"addUsers"}
           click={this.handleDataFetch.bind(this, API5)}
         />
-        {users !== {} && users !== null ? <UsersList users={users} /> : ""}
+        {users.length > 0 ? <UsersList users={users} /> : ""}
       </div>
     );
   }
