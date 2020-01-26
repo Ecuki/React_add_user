@@ -9,7 +9,7 @@ class App extends React.Component {
   state = {
     users: []
   };
-  usersUpadat = (data, API) => {
+  usersUpdate = (data, API) => {
     if (API === API1) {
       this.setState(prevStste => ({
         users: prevStste.users.concat(data)
@@ -31,7 +31,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(json => {
         const users = json.results;
-        this.usersUpadat(users, API);
+        this.usersUpdate(users, API);
       })
       .catch(error => console.log(error));
   };
